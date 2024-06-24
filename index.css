@@ -1,0 +1,147 @@
+body{
+    margin:0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   background-color:#081b29;
+}
+nav{
+top:0;
+width:100%;
+position: relative;
+left:0;
+/* background-color: thistle; */
+}
+nav ul{
+list-style-type: none;
+overflow: hidden;
+margin:0;
+padding: 20px;
+/* padding-bottom: 40px; */
+}
+nav li{
+float: right;
+}
+nav a{
+padding: 17px 17px;
+transition: background-color 0.3s;
+text-decoration: none;
+font-size: larger;
+color:#00abf0;
+}
+nav a:hover{
+font-weight: bolder;
+cursor: pointer;
+text-decoration: underline;
+}
+.container1{
+    height: 723px;
+   padding-top: 20px;
+/* margin-top: 37px; */
+overflow: hidden;
+display: flex;
+}
+.home{
+    width:50%;
+    height: 600px;
+    text-align:left;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.home h1{
+    font-size: 57px;
+    font-weight: 700;
+    color:white;
+}
+.home h2{
+    font-size: 32px;
+    font-weight: 700;
+    color:#00abf0;
+}
+.home p{
+    font-size: 16px;
+    color: white;
+}
+strong{
+    color: #00abf0;
+}
+.home1{
+    height: 100px;
+     margin-left: 190px;
+     margin-top: 70px;
+   margin-right: 60px;
+}
+.home1 img{
+    height: 400px;
+    width: 100%;
+   border-radius: 30%;
+}
+button{
+    background-color: #333;
+    color:#081b29;
+    background-color: #00abf0;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 10px;
+    /* font-size: 20px; */
+    font-weight:bolder;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.container2{
+    height: 2030px;
+   padding-top: 27px;   
+/* margin-top: 37px; */
+
+overflow: hidden;
+
+background-color:#87CEFA;
+}
+.line{
+    height: 4px;
+    border: none;
+    background-color: #081b29;
+    width: 180px;
+    /* padding-left: 0px; */
+    margin-left: 0px;
+}
+.contain {
+    display: flex;
+  }
+  
+  .box {
+    flex: 1;
+    border: 1px solid black;
+    height: 100px;
+    margin: 5px;
+  }
+  
+  .selected {
+    background-color: yellow;
+  }
+
+.teams{
+    height: 683px;
+    padding-bottom:0;
+    background-color: #00abf0;
+}
+table {
+    width: 95%;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    
+  }
+
+  th, td {
+    border: 1px solid #00abf0;
+    text-align: left;
+    padding: 8px;
+    color:white;
+  }
+
+  th {
+    background-color: #00abf0;
+  }
+
+  

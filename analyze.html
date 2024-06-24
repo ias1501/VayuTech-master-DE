@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>   
+                <img src="./photo/logo-removebg-preview.png" height="50px" width="50px" style="cursor: pointer;">
+                <li><a>Login</a></li>
+                <li><a>Analyze</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>  
+
+    <h2 style="color: #ffffff;">Air Quality Monitoring Data</h2>
+      <table>
+        <tbody id="tableBody">
+
+        </tbody>
+      </table>
+    <div id="line_chart_div" style="width: 50%; float: left; height:1000px"></div>
+    <div id="pie_chart_div" style="width: 50%; float: right;height:1000px"></div>
+
+    <script>
+        // Initialize Supabase client
+        const supabase1 = supabase.createClient('https://veqqfdfxcrzflhdzjpjj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZlcXFmZGZ4Y3J6ZmxoZHpqcGpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk0NTg5MzYsImV4cCI6MjAxNTAzNDkzNn0.CkP8BTUxEA-bR5USQqe8rjFPhLZFP6oHTMYgbSIkQ9s');
+        async function populateTable() {
+            const { data, error } = await supabase1.from('air_quality_data').select('*');
+console.log(data)
+            if (error) {
+                console.error('Error querying data:', error.message);
+                return;
+            }
+
+            const tableBody = document.getElementById('tableBody');
+            
+
+            data.forEach(entry => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                <td>${entry.id}</td>
+                <td>${entry.date}</td>
+                <td>${entry.time}</td>
+                <td>${entry.readings}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Call the populateTable function when the page loads
+        window.onload = () => {
+            populateTable();
+        };
+        // Load Google Charts API
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawCharts);
+
+        // Function to fetch data from Supabase and draw the charts
+        function drawCharts() {
+            // Draw line chart
+            drawLineChartWithAlert(1.94);
+
+            // Draw pie chart
+            drawPieChart();
+        }
+
+        // Function to draw the line chart
+        // Function to draw the line chart with hourly averages and trigger alerts
+function drawLineChartWithAlert(threshold) {
+    supabase1.from('air_quality_data').select('*')
+        .then(({ data, error }) => {
+            if (error) {
+                console.error('Error querying data:', error.message);
+                return;
+            }
+
+            const hourlyAverages = {}; // Object to store hourly averages
+            const hourlyCounts = {}; // Object to store counts of readings for each hour
+
+            // Calculate hourly averages
+            data.forEach(entry => {
+                const time = entry.time.split(':')[0]; // Extract hour
+                const readings = parseFloat(entry.readings);
+                
+                if (!hourlyAverages[time]) {
+                    hourlyAverages[time] = 0;
+                    hourlyCounts[time] = 0;
+                }
+
+                hourlyAverages[time] += readings;
+                hourlyCounts[time]++;
+            });
+
+            // Calculate averages
+            for (const hour in hourlyAverages) {
+                hourlyAverages[hour] /= hourlyCounts[hour];
+            }
+
+            const dataTable = new google.visualization.DataTable();
+            dataTable.addColumn('string', 'Hour');
+            dataTable.addColumn('number', 'Average Readings');
+
+            // Add data to the DataTable and trigger alerts
+            for (const hour in hourlyAverages) {
+                const averageReading = hourlyAverages[hour];
+                dataTable.addRow([`${hour}:00`, averageReading]);
+
+                // Check if average reading exceeds threshold
+                if (averageReading > threshold) {
+                    // Trigger alert or sound
+                    alert(`Alert: Air quality threshold exceeded at ${hour}:00!`);
+                    // You can also play a sound using HTML5 audio element:
+                    // const audio = new Audio('alert_sound.mp3');
+                    // audio.play();
+                }
+            }
+
+            const options = {
+                title: 'Hourly Average Air Quality Readings',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            const chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
+            chart.draw(dataTable, options);
+        })
+        .catch(error => {
+            console.error('Error querying data:', error.message);
+        });
+}
+
+// Call the function with a threshold value (e.g., 300 ppm)
+
+
+        // Function to draw the pie chart
+        function drawPieChart() {
+            supabase1.from('air_quality_data').select('*')
+                .then(({ data, error }) => {
+                    if (error) {
+                        console.error('Error querying data:', error.message);
+                        return;
+                    }
+
+                    const hourlyData = {};
+                    data.forEach(entry => {
+                        const time = entry.time.split(':')[0];
+                        if (!hourlyData[time]) {
+                            hourlyData[time] = 0;
+                        }
+                        hourlyData[time] += entry.readings;
+                    });
+
+                    const dataTable = new google.visualization.DataTable();
+                    dataTable.addColumn('string', 'Hour');
+                    dataTable.addColumn('number', 'Readings');
+
+                    for (const hour in hourlyData) {
+                        dataTable.addRow([`${hour}:00`, hourlyData[hour]]);
+                    }
+
+                    const options = {
+                        title: 'Distribution of Air Quality Readings Across Hours',
+                        is3D: true,
+                    };
+
+                    const chart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
+                    chart.draw(dataTable, options);
+                })
+                .catch(error => {
+                    console.error('Error querying data:', error.message);
+                });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAYUTECH</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header >
+        <nav>
+            <ul>   
+                <img src="./photo/logo-removebg-preview.png" height="50px" width="50px" style="cursor: pointer;">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="analyze.html">Analyze</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="home.html">Home</a></li>
+                  
+            </ul>
+        </nav>
+    </header>
+    <div class="container1" >
+        <div class="home">
+        <h1>Welcome To <strong>Vayu</strong> Tech</h1>
+        <h2>Air Quality Monitoring Company</h2>
+        <p class="para_home" style="margin-bottom: 1px;">
+         In VayuTech we provide accurate and real-time data on the levels of various pollutants in the atmosphere. By employing advanced monitoring technologies and methodologies
+        </p>
+                         <button onclick="product()">PRODUCTS</button>
+          
+            
+        </div>
+        <div class="home1">
+        <img src="./photo/home.jpg">
+        
+        </div>
+        </div> 
+        <div class="container2">
+            <div style="padding-left:50px;height: 110px;width: 100%;">
+                <div style="float: left;width:  25%;height: 110px;"><h1 style="font-weight: bolder;font-size:35px;">Who We Are</h1>
+                    <hr class="line">
+                </div>
+                <div style="width:75%;height: 90%;padding-top: 10px;">We are a tech for good organization
+                    <br>that is building data-driven solutions to
+                    <br>solve a global problem.
+                </div>
+            </div>
+          <div style="height: 600px;width: 100%;">
+
+            <div style="width:33.33%;float: left;height:400px">
+            <div style="margin-left: 10px;">
+                <img src="./photo/home_1.jpg" style="max-height: 100%; max-width: 100%;">
+            </div>
+            <div style="margin-left:70px ;">
+                <h3 style="font-family: Poppins, sans-serif; color:  #081b29;">MISSION 1
+                <hr class="line"></h3>
+                <h1 style="font-family: Poppins, sans-serif;color:  #081b29;">Health</h1>
+                <p style="font-family: Poppins, sans-serif;">To help people lead <br>healthier lives by helping <br>manage their air pollution<br> exposure everywhere.</p>
+            </div>
+            </div>
+            <div style="width:33.33%;float: left;height:400px">
+                <div style="margin-left: 10px;" >
+                    <img src="./photo/home_2.jpg" style="max-height: 100%; max-width: 100%; width: auto; height: auto;">
+                </div>
+                <div style="margin-left:70px ;">
+                    <h3 style="font-family: Poppins, sans-serif;color:  #081b29;">MISSION 2<hr class="line"></h3>
+                    <h1 style="font-family: Poppins, sans-serif;color:  #081b29;">Policy</h1>
+                    <p style="font-family: Poppins, sans-serif;" >To help people lead <br>healthier lives by helping <br>manage their air pollution<br> exposure everywhere.</p>
+                </div>
+            </div>
+            <div style="width:33.33%;float: left;height:400px">
+                <div style="margin-left: 10px;">
+                    <img src="./photo/home_3.jpg" style="max-height: 100%; max-width: 100%; width: auto; height: auto;">
+                </div>
+                <div style="margin-left:70px ;">
+                    <h3 style="font-family: Poppins, sans-serif;color:  #081b29;">MISSION 3<hr class="line"></h3>
+                    <h1 style="font-family: Poppins, sans-serif;color:  #081b29;">Civic Action</h1>
+                    <p style="font-family: Poppins, sans-serif;">To help people lead <br>healthier lives by helping <br>manage their air pollution<br> exposure everywhere.</p>
+                </div>
+            </div>
+        </div>
+        <div style="height:60px ;">
+            <img src="./photo/home_4.png" style="justify-content: right; max-width: 100%;max-height: 100%;">
+            <hr style="height: 2px;
+            border: none;
+            background-color: #081b29;
+            width: 100%;
+            /* padding-left: 0px; */
+            margin-left: 80px;
+            margin-right:80px;" >
+
+        </div>
+        
+        <div style="padding-left:50px;height: 110px;width: 100%;margin-top: 40px;">
+            <div style="float: left;width:  25%;height: 110px;"><h1 style="font-weight: bolder;font-size:35px;"> Our Solutions</h1>
+                <hr class="line">
+            </div>
+            <div style="width:75%;height: 90%;padding-top: 10px;">We provide comprehensive and
+                <br>affordable air quality monitoring
+                <br>solutions for both indoor and outdoor<br>enviornment.
+            </div>
+        </div>
+            <div >
+                <button onclick="showDivs('first')" style="margin-left: 44px ;margin-top:10px;">Indoor Enviornment</button>
+<button onclick="showDivs('second')"  style="justify-content: right;">Ambient Enviornment</button>
+            </div>
+<div class="contain" id="container3" style="display: flex; height:500px;margin-top: 20px;">
+  <div class="box" id="box1" onclick="selectBox('box1')" style="width:33.33%;float: left;height:400px;">
+    <div style="height: 35%; background-color: #174197;">
+     <strong style="font-family: Poppins, sans-serif;font-weight: 700;font-size: 2.96vh;color: white;margin-left: 10px;">Offices</strong>
+<p style="color: white; margin-left: 10px;font-family: Poppins, sans-serif;font-weight: 100;font-size: 1.85vh;">Poor indoor air quality affects health, productivity,<br> decision making, and absenteeism in the<br> workspace.
+</p>
+        
+    </div>
+    <div style="height: 65%; width:100% ;background-image: url('./photo/home_5.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    </div>
+
+</div>
+  <div class="box" id="box2" onclick="selectBox('box2')"style="width:33.33%;float: left;height:400px;">
+    <div style="height: 65%; width:100% ;background-image: url('./photo/home_6.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    </div>
+    <div style="height: 35%; background-color: #0D7141;">
+        <strong style="font-family: Poppins, sans-serif;font-weight: 700;font-size: 2.96vh;color: white;margin-left: 10px;">Schools</strong>
+   <p style="color: white; margin-left: 10px;font-family: Poppins, sans-serif;font-weight: 100;font-size: 1.85vh;">Children spend more than 1500 hours each year <br>in school. Air pollution exposure can cause <br>irreversible damage to their lungs which are still <br>developing.
+       </div>
+</div>
+  <div class="box" id="box3" onclick="selectBox('box3')"style="width:33.33%;float: left;height:400px;">
+    <div style="height: 35%; background-color: #653406;">
+        <strong style="font-family: Poppins, sans-serif;font-weight: 700;font-size: 2.96vh;color: white;margin-left: 10px;">Service Industry</strong>
+   <p style="color: white; margin-left: 10px;font-family: Poppins, sans-serif;font-weight: 100;font-size: 1.85vh;">Premium hotels, malls, gyms, salons, restaurants <br>etc. have an opportunity to differentiate <br>themselves to their clients by managing and <br>showcasing good air quality on their premises.<br>
+       </div>
+    <div style="height: 65%; width:100% ;background-image: url('./photo/home_7.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    </div>
+</div>
+</div>
+
+<div class="contain" id="container4" style="display: none;">
+  <div class="box" id="box4" onclick="selectBox('box4')"style="width:33.33%;float: left;height:400px;">
+    <div style="height: 35%; background-color: #174197;">
+        <strong style="font-family: Poppins, sans-serif;font-weight: 700;font-size: 2.96vh;color: white;margin-left: 10px;">City Networks</strong>
+   <p style="color: white; margin-left: 10px;font-family: Poppins, sans-serif;font-weight: 100;font-size: 1.85vh;">Regulatory grade sensors are extremely <br>expensive to purchase, deploy, and maintain. <br>Low-cost sensors can allow cities to create <br>dense air quality networks to understand local <br>hotspots and take focused action.
+   </p>
+           
+       </div>
+       <div style="height: 65%; width:100% ;background-image: url('./photo/home_8.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+       </div>
+</div>
+  <div class="box" id="box5" onclick="selectBox('box5')"style="width:33.33%;float: left;height:400px;">
+    <div style="height: 65%; width:100% ;background-image: url('./photo/home_9.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    </div>
+    <div style="height: 35%; background-color: #0D7141;">
+        <strong style="font-family: Poppins, sans-serif;font-weight: 700;font-size: 2.96vh;color: white;margin-left: 10px;">Grassroots & Institutes</strong>
+   <p style="color: white; margin-left: 10px;font-family: Poppins, sans-serif;font-weight: 100;font-size: 1.85vh;">Various organizations are working tirelessly to<br> drive awareness on the ground and require <br>monitoring to help educate communities on the <br>harmful effects of air pollution.Top institutes<br> across the country are working on research <br>which requires monitoring equipment to move<br> our understanding of air quality forward.
+       </div>
+</div>
+  <div class="box" id="box6" onclick="selectBox('box6')"style="width:33.33%;float: left;height:400px;">
+    <div style="height: 35%; background-color: #653406;">
+        <strong style="font-family: Poppins, sans-serif;font-weight: 700;font-size: 2.96vh;color: white;margin-left: 10px;">Construction Sites</strong>
+   <p style="color: white; margin-left: 10px;font-family: Poppins, sans-serif;font-weight: 100;font-size: 1.85vh;">Various regulations now require construction <br>sites to monitor air quality continuously and <br>share data with regulatory bodies.
+
+       </div>
+    <div style="height: 65%; width:100% ;background-image: url('./photo/home_10.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    </div>
+</div>
+</div>
+
+<script src="index.js"></script>
+<div style="padding-left:50px;height: 110px;width: 100%;">
+    <div style="float: left;width:  25%;height: 110px;"><h1 style="font-weight: bolder;font-size:35px;">Blogs</h1>
+        <hr class="line">
+    </div>
+    <div style="width:75%;height: 90%;padding-top: 10px;">Our insights, perspectives, knowledge and <br>research on air quality in today's enviornment<br>
+        We spread awareness towards ambient air <br>condition by covering every aspect
+    </div>
+</div>
+            
+<div class="box" id="box1" onclick="selectBox('box1')" style="width:32.33%;float: left;height:420px;background-image: url(./photo/home_11.jpg);background-size: cover; background-position: center; background-repeat: no-repeat;z-index:-1; filter: brightness(0.8) saturate(1.0) contrast(1.0);border-radius: 10%;">
+  <p style="font-size: 2.22vh;
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 40.7vh;
+  color: #fff;margin-left: 300px;">Spetember 21,2023</p>
+  <p style="margin-left:10px;color: #fff;
+  font-size: 1.56vw;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  margin-top: 1.85vh;">
+Are Hotels and malls doing their best to help guest breathe easy?
+  </p>
+        </div>
+        <div class="box" id="box1" onclick="selectBox('box1')" style="width:32.33%;float: left;height:420px;background-image: url(./photo/home_12.jpg);background-size: cover; background-position: center; background-repeat: no-repeat;z-index:-1; filter: brightness(0.7) saturate(1.0) contrast(1.0);border-radius: 10%;">
+            <p style="font-size: 2.22vh;
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 40.7vh;
+  color: #fff;margin-left: 328px;">August 18,2023</p>
+  <p style="margin-left:10px;color: #fff;
+  font-size: 1.56vw;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  margin-top: 1.85vh;
+  filter: brightness(2.0)">
+Why air quality at construction site is critical
+  </p>
+                </div>
+                <div class="box" id="box1" onclick="selectBox('box1')" style="width:32.33%;float: left;height:420px;background-image: url(./photo/home_13.jpg);background-size: cover; background-position: center; background-repeat: no-repeat;z-index:-1; filter: brightness(0.7) saturate(1.0) contrast(1.0);border-radius: 10%;">
+                    <p style="font-size: 2.22vh;
+                    font-family: Poppins, sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    margin-top: 40.7vh;
+                    color: #fff;margin-left: 350px;">April 27,2023</p>
+                    <p style="margin-left:10px;color: #fff;
+                    font-size: 1.56vw;
+                    font-family: Poppins, sans-serif;
+                    font-weight: 700;
+                    margin-top: 1.85vh;">
+                  Is Your School Safe? Here's why air quality  monitoring system
+                    </p>
+                        </div></div>
+        <footer>
+            <div style="height: 200px;background-color: #081b29;display:flex;">
+                <div style="width: 60% ;">
+                    <div style="width:100%;height:20%;margin-top: 30px;margin-left: 90px;">
+                        <div style="width: 7%;float: left;">
+                        <img src="./photo/logo-removebg-preview.png" height="50px" style="cursor: pointer;" ></div>
+                        <div style="width:93%;padding-top: 15px;font-family: Poppins, sans-serif;
+                        font-weight: 700;
+                        font-size: 24px; color: #00abf0;">VayuTech</div>
+                        </div>
+                    <div style="width: 100%;height:80%;margin-left: 100px;font-size: 1.25vw;
+                    font-family: Poppins, sans-serif;
+                    font-weight: 400;color: #00abf0;">
+                    <p>We are a diverse team of believers from across the country <br>who have come together because of our<br> faith in our mission and belief in our vision. To be part of our journey<br> write to us at hr@vayutech.com</p>
+                    <p> © 2023 VayuTech</p>
+                    </div>
+                </div>
+                <div style="width:40%;display: flex;">
+            <div style="width:50%;margin-top: 20px;font-size: 1.25vw;
+            font-family: Poppins, sans-serif;
+            font-weight: 400;
+            
+            color: #00abf0;">
+                <p><b>Contact Us</b></p>
+                <p>
+                    <a style="color: #00abf0;font-size:30px;" href="https://www.linkedin.com/in/vibhu-patel-131120223/" target="_blank" class="social"><i class="fab fa-linkedin"></i></a>
+        <a style="color: #00abf0;font-size:30px;"href="https://twitter.com/vibhu_315" target="_blank" class="social"><i class="fab fa-twitter"></i></a> 
+        <a style="color: #00abf0;font-size:30px;"href="https://www.instagram.com/vibhupatel_315/?next=%2F" target="_blank" class="social"><i class="fab fa-instagram"></i></a>
+                </p>
+                <p>
+                    +91 9998976787
+                </p>
+                <p>
+                    info@vayutech.com
+                </p>
+            </div>
+            <div style="width:50%;font-size: 1.25vw;
+            font-family: Poppins, sans-serif;
+            font-weight: 400;margin-top: 20px;color: #00abf0;">
+                <p ><a  style="color:#00abf0;text-decoration: none;" href="team.html">Team</a>
+                    
+                </p>
+                <p>Carrers</p>
+                <p>#iBreathe</p>
+                <p>Privacy Policy</p>
+            </div>
+                </div>
+            </div>
+        </footer>
+        
+</body>
+</html>
